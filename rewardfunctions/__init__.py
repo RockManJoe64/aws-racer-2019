@@ -1,6 +1,6 @@
 def nascar_8_bit(params):
     """
-    Reward on waypoints
+    Reward on heading and waypoints
     """
 
     import math
@@ -39,7 +39,7 @@ def nascar_8_bit(params):
     speed = params['speed']
 
     # Set the speed threshold based your action space
-    SPEED_THRESHOLD = 4.0
+    SPEED_THRESHOLD = 3.0
 
     if not all_wheels_on_track:
         # Penalize if the car goes off track
@@ -49,7 +49,7 @@ def nascar_8_bit(params):
         reward *= 0.5
     else:
         # High reward if the car stays on track and goes fast
-        reward *= 10.0
+        reward *= 2.0
 
     return reward
 
