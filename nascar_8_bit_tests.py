@@ -17,7 +17,7 @@ class RewardFunctionTests(unittest.TestCase):
             with self.subTest(speed=speed):
                 self.params["speed"] = speed
                 reward = nascar_8_bit(self.params)
-                self.assertGreaterEqual(reward, 20, "speed=%d" % speed)
+                self.assertGreater(reward, 10, "speed=%d" % speed)
 
     def test_speed_on_track_decreasing_reward(self):
         for speed in [1, 2]:
@@ -31,7 +31,7 @@ class RewardFunctionTests(unittest.TestCase):
             with self.subTest(heading=heading):
                 self.params["heading"] = heading
                 reward = nascar_8_bit(self.params)
-                self.assertGreaterEqual(reward, 20, "heading=%d" % heading)
+                self.assertGreater(reward, 10, "heading=%d" % heading)
 
     def test_heading_on_track_decreasing_reward(self):
         for heading in [160, 200]:
